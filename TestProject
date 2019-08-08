@@ -1,0 +1,159 @@
+/*
+Celem zadania jest przetestowanie klasy, którą musisz napisać, o nazwie — powiedzmy — ShapeCollector, przy następujących założeniach:
+
+Klasa ta przechowuje figury geometryczne w kolekcji ArrayList. Figury są następujące: kwadrat, koło, trójkąt (oczywiście użyj angielskich nazw klas).
+Wszystkie figury implementują interfejs Shape, który musisz przygotować. Zawiera on dwie metody:
+jedna zwraca nazwę figury ("square", "triangle" oraz "circle"),
+a druga zwraca obliczone pole powierzchni tej figury.
+Klasy figur implementują interfejs Shape.
+Klasa ShapeCollector ma trzy metody:
+jedną dodającą figurę do kolekcji,
+drugą usuwającą figurę z kolekcji,
+trzecią pobierającą z kolekcji figurę z pozycji n listy.
+Aby przygotować rozwiązanie zadania:
+
+W katalogu src/main/java utwórz pakiet com.kodilla.testing.shape.
+W stworzonym pakiecie utwórz interfejs Shape, zawierający dwie metody: getShapeName() oraz getField().
+Utwórz klasy reprezentujące poszczególne figury — posiadające już właściwe implementacje metod interfejsu.
+Utwórz klasę ShapeCollector z metodami: addFigure(Shape shape), removeFigure(Shape shape), getFigure(int n) oraz showFigures().
+W katalogu src/test/java utwórz pakiet com.kodilla.testing.shape.
+Stwórz w tym pakiecie klasę testową (zbiór testów) ShapeCollectorTestSuite.
+Napisz testy sprawdzające metody klasy ShapeCollector.
+Zadanie wykonaj zgodnie z podejściem TDD: najpierw napisz testy (wyślij klasę z testami jako snippet do Mentora poprzez czat przed dalszym wykonywaniem zadania), a dopiero potem uzupełnij implementację metod klasy ShapeCollector.
+*/
+
+import java.util.List;
+import java.util.ArrayList;
+
+interface Shape{
+  public String getShapeName();
+
+  public double getField();
+
+}
+
+class ShapeCollector{
+  List<Shape> figureList = new ArrayList<Shape>();
+
+  public void addFigure(Shape shape){
+  };
+  public void removeFigure(Shape shape){
+
+  };
+  public Shape getFigure(int i){
+    return shape;
+  }; 
+  public void showFigures(){
+
+  };
+}
+
+class Square implements Shape{
+public String getShapeName(){
+  return "";
+};
+
+  public double getField(){
+    return 1.0;
+  };
+} 
+
+class Triangle implements Shape{
+public String getShapeName(){
+  return "";
+};
+
+  public double getField(){
+    return 1.0;
+  };
+}
+
+class Circle implements Shape{
+  public String getShapeName(){
+    return "";
+};
+
+  public double getField(){
+    return 1.0;
+  };
+  }
+
+public class ShapeCollectorTestSuite{
+public void testAddShapeSquare() {
+    //Given
+    Shape shape = new Square("kwadrat",5);
+
+    //When
+ shape.getField();
+
+       //Then
+    //Assert.assertEquals(25,  shape.getField());
+}
+
+}
+public void testAddShapeTriangle() {
+    //Given
+    Shape shape = new Triangle("trójkąt",5,2);
+
+    //When
+ shape.getField();
+
+       //Then
+    //Assert.assertEquals(5,  shape.getField());
+}
+public void testAddShapeCircle() {
+    //Given
+    Shape shape = new Circle("koło",4);
+
+    //When
+ shape.getField();
+
+       //Then
+    //Assert.assertEquals(12.56,  shape.getField());
+}
+
+public void testRemoveShape(){
+  Shape shape = new Triangle("trójkąt1",5,2);
+  figureList.add(shape);
+
+  figureList.removeFigure(shape);
+
+
+  Assert.assertFalse( figureList.contains(shape));
+}
+
+public void testGetFigure(){
+  Shape shape = new Triangle("trójkąt2",5,2);
+  figureList.add(shape);
+
+ 
+
+  Assert.assertEquals(0,  figureList.indexOf(shape));
+}
+
+public void testShowFigures(){
+  Shape shape = new Triangle("trójkąt2",5,2);
+  Shape shape1 = new Square("kwadrat",2);
+  Shape shape2 = new Circle("koło",5);
+  figureList.add(shape);
+  figureList.add(shape1);
+  figureList.add(shape2);
+
+
+ 
+
+  Assert.assertEquals(3,  figureList.size()+1);
+}
+
+
+}
+
+
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("End of the program.");
+  }
+}
+
+
